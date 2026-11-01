@@ -1,22 +1,64 @@
 {
   "name": "stravakinda",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "expo-router/entry",
   "dependencies": {
+    "@expo/vector-icons": "^15.0.2",
+    "@hookform/resolvers": "^6.0.0",
+    "@supabase/supabase-js": "^2.118.0",
+    "@tanstack/react-query": "^5.104.5",
     "expo": "~58.0.19",
+    "expo-constants": "~58.0.13",
+    "expo-crypto": "~58.0.7",
+    "expo-dev-client": "~58.0.15",
+    "expo-file-system": "~58.0.11",
+    "expo-font": "~58.0.10",
+    "expo-linking": "~58.0.14",
+    "expo-location": "~58.0.19",
+    "expo-router": "~58.0.26",
+    "expo-secure-store": "~58.0.2",
+    "expo-sharing": "~58.0.20",
+    "expo-splash-screen": "~58.0.11",
+    "expo-sqlite": "~58.0.14",
     "expo-status-bar": "~58.0.4",
+    "expo-system-ui": "~58.0.6",
+    "expo-task-manager": "~58.0.12",
     "react": "19.3.0",
-    "react-native": "0.88.0"
+    "react-dom": "19.3.0",
+    "react-hook-form": "^7.91.0",
+    "react-native": "0.88.0",
+    "react-native-maps": "1.29.11",
+    "react-native-purchases": "^10.15.1",
+    "react-native-safe-area-context": "~5.10.1",
+    "react-native-screens": "~4.30.0",
+    "react-native-url-polyfill": "^4.0.0",
+    "react-native-web": "^0.21.4",
+    "zod": "^4.6.7",
+    "zustand": "^5.0.16"
   },
   "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@testing-library/react-native": "^14.1.0",
     "@types/react": "~19.3.0",
-    "typescript": "~6.0.3"
+    "eslint": "9.39.5",
+    "eslint-config-expo": "~58.0.4",
+    "prettier": "^3.0.0",
+    "typescript": "~6.0.3",
+    "vite": "^8.0.0",
+    "vitest": "^5.0.5"
   },
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm run lint && npm test",
+    "test:web": "node scripts/test-web.mjs",
+    "export:all": "expo export --platform android --platform ios --platform web",
+    "format": "prettier --write src components features hooks services store types utils tests scripts app.config.ts playwright.config.ts vitest.config.mts"
   },
   "private": true
 }
